@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eclipse Conversion Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    select, input[type="file"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"] + label {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 10px 20px;
+      margin: 0px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: #E35E05;
+      color: white;
+    }
+
+    #uploadBtn {
+      background-color: #E35E05;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #downloadLink {
+      display: none;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #E35E05;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Eclipse Conversion Tool</h1>
+    <p>This tool is used to convert a CSV file of either coordinates or ZIP Codes to a CSV file containing eclipse data by location.</p>
+    <label for="eclipseDateSelect">Select an eclipse date:</label>
+    <select id="eclipseDateSelect"></select>
+    <label for="csvInputSelect">Select the CSV input type:</label>
+    <input type="radio" id="coordinatesRadio" name="conversionType" checked>
+    <label for="coordinatesRadio">Coordinates</label>
+    <input type="radio" id="zipCodesRadio" name="conversionType">
+    <label for="zipCodesRadio">Zip Codes</label><br>
+    <input type="file" id="csvFileInput" onclick="this.value=null;" accept=".csv" style="display: none;">
+    <button id="uploadBtn" onclick="document.getElementById('csvFileInput').click()">Upload CSV File</button>
+    <a id="downloadLink" style="display: none">Download Processed CSV</a>
+  </div>
+
+  <script src="convert.js"></script>
+  <script src="eclipse-explorer.js"></script>
+
+</body>
+</html>
