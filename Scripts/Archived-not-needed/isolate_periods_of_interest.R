@@ -1,6 +1,0 @@
-total_within <- birdnet[eclipse_event == 'total' & within_path == 'within_path' & date == "2024-04-08"]
-total_within <- total_within[start_time >= FirstContactTimeUTC & start_time <= FourthContactTimeUTC]
-total_outside <- birdnet[eclipse_event == 'total' & within_path == 'outside_path'& date == "2024-04-08"]  
-total_outside <- total_outside[start_time >= FirstContactTimeUTC & start_time <= FourthContactTimeUTC]
-total_nonday <- birdnet[eclipse_event == 'total' & date != "2024-04-08"]
-total_nonday <- total_nonday[start_time >= FirstContactTimeUTC & start_time <= FourthContactTimeUTC]
