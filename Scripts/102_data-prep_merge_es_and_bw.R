@@ -75,24 +75,6 @@ if(!file.exists(here('Data/merged_es_bw_apr2025.csv'))){
   bw_tot[, `:=`(day = day(timestamp), hour = hour(timestamp), 
                 start_time = as_hms(timestamp))]
   
-  # need to calculate distance to center of path
-  # call column dist_to_center
-  # conver to dist_km
-  
-  
-  # categorical for within_path
-  # get proximity to center of path
-  # also get indicator for whether within path
-  
-  # get pucs, remove duplicated station id, bring back into bw_apr so I have just a single lat/lon
-  # pucs <- bw_tot[Station %like% "PUC"]
-  # pucs <- pucs[!duplicated(Station)]
-  # bw_tot <- bw_tot[!(Station %like% "PUC")]
-  # bw_tot <- rbindlist(list(bw_tot, pucs))
-  
-  # get lat lon stuff going for getting unique stations
-  # bw_apr[,  `:=`(lon_round = round(Longitude, 3),
-  #                lat_round = round(Latitude, 3))] 
   
   bw_tot[, lat_lon_index := .GRP, .(Longitude, Latitude)]
   
@@ -114,7 +96,6 @@ if(!file.exists(here('Data/merged_es_bw_apr2025.csv'))){
   bw_tot[, dist_km := as.numeric(dist_km)]
   
   # also need categorical for spp activity pattern
-  # quickly skimmed list of species in birdnet for nocturnals detected
   noc_spp <- c("Barred Owl","Barn Owl","Black-crowned Night-Heron",
                "Chuck-will's-widow", "Common Nighthawk" ,"Common Pauraque",
                "Common Poorwill","Eastern Screech-Owl","Eastern Whip-poor-will",

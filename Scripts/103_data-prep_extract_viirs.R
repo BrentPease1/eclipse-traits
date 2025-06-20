@@ -7,8 +7,8 @@ library(rworldmap)
 setDTthreads(0)
 # script outline:
 #   - read in vocalization activity measures calculated with Scripts/101_data-prep_calculate_vocal_activity_v02.R
-#   - read in corresponding month of nighttime_light values
-#   - extract point-level values
+#   - read in corresponding month of VIIRS nighttime_light values
+#   - extract point-level values at each station
 
 
 
@@ -18,15 +18,6 @@ if(!file.exists(here('Data/merged_es_bw_apr2025_viirs.csv'))){
   
   source(here('Scripts/102_data-prep_merge_es_and_bw.R'))
   
-  
-  # get unique deployments
-  # get pucs, remove duplicated station id, bring back into bw_apr so I have just a single lat/lon
-  # pucs <- out[Station %like% "PUC"]
-  # pucs <- pucs[!duplicated(Station)]
-  # out <- out[!(Station %like% "PUC")]
-  # out <- rbindlist(list(out, pucs))
-  # rm(pucs)
-  
   # index for getting locations
   out[, lat_lon_index := .GRP, .(Longitude, Latitude)]
   out[, `:=`(year = year(timestamp), month = month(timestamp))]
@@ -35,7 +26,6 @@ if(!file.exists(here('Data/merged_es_bw_apr2025_viirs.csv'))){
   out_locs <- st_as_sf(out_locs, coords = c('Longitude', 'Latitude'), crs = 4326)
   
   # Read in corresponding nighttime_lights ####
-  # base_file <- here('Data/VIIRS/nighttime_light/monthly/v10')
   base_file <- "D:/nighttime_data"
   
   va_holder <- list()
@@ -49,9 +39,6 @@ if(!file.exists(here('Data/merged_es_bw_apr2025_viirs.csv'))){
     year_num_file <- paste0(base_file, "/", this_year, 
                             "/",year_num, "/","vcmslcfg")
     nt_files <- list.files(year_num_file, 
-                           #  pattern = "\\.cf_cvg\\.tif$", 
-                           # cf_cvg is just the number of cloud free days
-                           # used to make the monthly average calculations
                            pattern = "\\.avg_rade9h\\.tif$", 
                            full.names = TRUE, 
                            recursive = TRUE)
@@ -88,10 +75,7 @@ if(!file.exists(here('Data/merged_es_bw_apr2025_viirs.csv'))){
     setDT(nt_estimates)
     setkey(nt_estimates, "ID")
     
-    # bring back to vocal activity
-    # va <- merge(out, nt_estimates, by.x = "lat_lon_index", by.y = "ID")
-    # va <- va[!is.na(va$avg_rad),]
-    
+    # stash  
     va_counter = va_counter + 1
     va_holder[[va_counter]] <- nt_estimates
   }
