@@ -17,13 +17,24 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
 ## Repository Directory
 
 ### Data
- * [2023eclipse_shapefiles](./Data/2023eclipse_shapefiles) Shapefile of 2023 annular eclipse path
- * [2024eclipse_shapefiles](./Data/2024eclipse_shapefiles) Shapefile of 2024 total eclipse path
+ * [2023eclipse_shapefiles](./Data/2023eclipse_shapefiles) Folder with shapefile of 2023 annular eclipse path
+ * [2024eclipse_shapefiles](./Data/2024eclipse_shapefiles) Folder with shapefile of 2024 total eclipse path
  * [metadata](./Data/metadata) Folder containing ***
    * [2023_annular_locations_times.csv](./Data/metadata/2023_annular_locations_times.csv) *** what is this brent
    * [es2024_locations_times.csv](./Data/metadata/es2024_locations_times.csv) *** what is this brent
    * [es2024_locations_timesv02.csv](./Data/metadata/es2024_locations_timesv02.csv) *** what is this brent
- * b
+ * [avonet.csv](./Data/avonet.csv) AVONET database; the two relevant columns we use are `Habitat.Density` and `Migration`. See [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for full details
+ * [birdweather_elton_botw_name_key.csv] Crosswalk table for resolving name differences between datasets
+ * [cavity.csv] Table with nest type. Derived from reviewing species pages on [Birds of the World](https://birdsoftheworld.org/bow/home). Column meanings provided below.
+   | Column name | Description |
+   |-------------|-------------|
+   | com_name | Species common name |
+   | sci_name_bw | Species scientific name according to BirdWeather |
+   | cavity | Binary classification of whether the species nests in a cavity (1) or not (0) |
+ * [elton.txt]
+ * [pnoct_v01.csv]
+ * [ritland_clean.csv]
+ * [unique_locations.csv]
 
 ### Scripts
  * [101_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Script to load birdnet output from [Eclipse Soundscapes](https://eclipsesoundscapes.org) recordings. [BirdNET](https://birdnet.cornell.edu/) was ran locally and output files were stored in [Data/Birdnet](./Data/Birdnet). Once files are loaded, this script alculates morning onset and evening cessation from raw BirdWeather data downloads. This script writes[Birdnet_cleaned_v03.csv]('./Data/birdnet_cleaned_v03.csv), which is used in subsequent data prep scripts.
