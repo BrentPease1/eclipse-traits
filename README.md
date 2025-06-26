@@ -74,6 +74,18 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
  * [ritland_clean.csv](./Data/ritland_clean.csv) Ritland's eye size data. See [Ausprey 2021](https://royalsocietypublishing.org/doi/pdf/10.1098/rspb.2021.0853) for full details
  * [unique_locations.csv](./Data/unique_locations.csv) Table with unique sensor locations used in analysis (used for creating Fig. 1 maps)
 
+### Figures 
+Contains figure files, including PowerPoint files using to collate and annotate figure panels
+
+### Helpers/Eclipse-Data-Tool-main
+*** brent can you put a nice description here? idk what this is
+
+### Results
+ * [annular_eclipse_results.RData](./Results/annular_eclipse_results.RData) Model objects from annular analysis, as well as formatted data used to fit models. Generated from [204_annular_analysis.R](./Scripts/204_annular_analysis.R).
+ * [coverage_analysis_total_and_annular.RData](./Results/coverage_analysis_total_and_annular.RData) Model objects from coverage analysis, as well as formatted data used to fit models. Generated from [203_coverage_analysis.R](./Scripts/203_coverage_analysis.R).
+ * [total_eclipse_maximum.RData](./Results/total_eclipse_maximum.RData) Model objects from total eclipse logistic regression, as well as formatted data used to fit models. Generated from [201_total_eclipse_logistic_regression.R](./Scripts/201_total_eclipse_logistic_regression.R).
+ * [total_eclipse_vocalization_progression.RData](./Results/total_eclipse_vocalization_progression.RData) Model objects from total eclipse vocalization progression analysis, as well as formatted data used to fit models. Generated from [202_total_eclipse_vocalization_progression.R](./Scripts/202_total_eclipse_vocalization_progression.R).
+ 
 ### Scripts
  * [101_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Script to load birdnet output from [Eclipse Soundscapes](https://eclipsesoundscapes.org) recordings. [BirdNET](https://birdnet.cornell.edu/) was ran locally and output files were stored in [Data/Birdnet](./Data/Birdnet). Once files are loaded, this script alculates morning onset and evening cessation from raw BirdWeather data downloads. This script writes[Birdnet_cleaned_v03.csv]('./Data/birdnet_cleaned_v03.csv), which is used in subsequent data prep scripts.
  * [101b_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Helper script that is sourced within the primary load_birdnet script. This script loads Birdnet output files that have slightly different column names. Output from this script is binded with the data.frame of the primary load_birdnet script.
