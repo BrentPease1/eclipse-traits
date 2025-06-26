@@ -81,10 +81,12 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
  * [103_data-prep_extract_viirs.R](./Scripts/103_data-prep_extract_viirs.R). Annotates all birdnet detections with a nighttime_light level for use in subsequent analyses. Monthly cloud-free VIIRS Day Night Band data publicly available for download from the [Earth Observation Group](https://eogdata.mines.edu/products/vnl/). VIIRS data is not included in repository due to size. We downloaded every tile available from March 2023 - March 2024 from the Earth Observation Group. Example path to files: Home > nighttime_light > monthly > v10 > 2023 > 202301 > vcmslcfg. This is the final data prep script and output is ready for analysis in following script.
 * [201_total_eclipse_logistic_regression.R](./Scripts/201_total_eclipse_logistic_regression.R). This script fits logistic regression models analyzing whether (1) or not (0) a species was detected during a 4-minute time bin centered on maximum eclipse time during the total solar eclipse and the same period on the preceding day, as well as trait models.
 * [202_total_eclipse_vocalization_progression.R](./Scripts/202_total_eclipse_vocalization_progression.R). This script analyzes the progression or change in vocalization activity during the total solar eclipse.
-* [
-* [301_figures_figure_01.R](./Scripts/301_figures_figure_01.R). Creates and saves Figure 1.
-* [302_figures_figure_02.R](./Scripts/302_figures_figure_02.R). Creates and saves Figure 2.
-* [303_figures_figure_03.R](./Scripts/303_figures_figure_03.R). Creates and saves Figure 3.
-* [304_figures_figure_04_coverage_analysis.R](./Scripts/304_figures_figure_04_coverage_analysis.R). Creates and saves Figure 4.
+* [203_coverage_analysis.R](./Scripts/203_coverage_analysis.R) This script fits vocalization progression models using data from all sensors & evaluates influence of eclipse coverage on bird responses. This analysis includes both eclipse types (total and annular).
+* [204_annular_analysis.R](./Scripts/204_annular_analysis.R) This script fits logistic regression and vocalization progression models for the annular eclipse.
+* [301_figure_01.R](./Scripts/301_figure_01.R). Creates and saves panels (b) and (c) for Figure 1 (maps).
+* [302_figure_02.R](./Scripts/302_figure_02.R). Creates and saves Figure 2.
+* [303_figure_03.R](./Scripts/303_figure_03.R). Creates and saves Figure 3.
+* [304_figure_04.R](./Scripts/304_figure_04.R). Creates and saves Figure 4.
+* [305_figure_s01.R](./Scripts/305_figure_s01.R). Creates and saves Figure S01. 
 * [999_misc__birdweather_oct23_extract_contact_times.R](./Scripts/999_misc__birdweather_oct23_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2023 annular eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
 * [999_misc_birdweather_apr24_extract_contact_times.R](./Scripts/999_misc_birdweather_apr24_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2024 total eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
