@@ -31,6 +31,25 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
    | com_name | Species common name |
    | sci_name_bw | Species scientific name according to BirdWeather |
    | cavity | Binary classification of whether the species nests in a cavity (1) or not (0) |
+ * merged_es_bw_apr2025_viirs.csv Detection data from BirdWeather and Eclipse Soundscapes. NOTE: This file is too large to host on GitHub. It can be downloaded from [this GoogleDrive link](https://drive.google.com/file/d/1K8n42R5rQxtQan30fcZVU59NITi9pD52/view?usp=sharing). This file must be downloaded and placed in the [Data](./Data) folder for many of the scripts to run. Column information for the table provided below.
+   | Column name | Description |
+   |-------------|-------------|
+   | lat_lon_index | Index for grouping of latitude and longitude. Not used in downstream analysis  |
+   | ESIDNumber | Sensor identifier |
+   | common_name | Species common name (BirdNET output) |
+   | scientific_name | Species scientific name (BirdNET output) |
+   | start_time | Start time of audio clip |
+   | confidence | BirdNET confidence score |
+   | timestamp | Timestamp of detection |
+   | day | Day of month |
+   | hour | Hour of detection |
+   | date | Date of detection |
+   | Latitude | Latitude (EPSG 4326) of sensor |
+   | Longitude | Longitude (EPSG 4326) of sensor |
+   | coverage | The maximum coverage (percent obscuration of sun's face) that a location experienced during eclipse |
+   | FirstContactDate | Date of first contact during eclipse |
+   | FirstContactTimeUTC | Time of first contact during eclipse. See [this link](https://en.wikipedia.org/wiki/Solar_eclipse#:~:text=The%20visual%20phases%20observed%20during,the%20entire%20disk%20is%20covered.) for an explanation of eclipse contacts. |
+
  * [elton.txt](./Data/elton.txt) Elton Traits database; using this just to grab family names. See [Wilman et al. 2014](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1917.1) for details.
  * [pnoct_v01.csv](./Data/pnoct_v01.csv) Table with proportion of detections during nighttime (before sunrise or after sunset) under typical conditions. Derived from BirdWeather and Eclipse Soundscapes sensors on non-eclipse days.
    | Column name | Description |
@@ -38,7 +57,7 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
    | com | Common name |
    | sci | Scientific name according to BirdWeather |
  * [ritland_clean.csv](./Data/ritland_clean.csv) Ritland's eye size data. See [Ausprey 2021](https://royalsocietypublishing.org/doi/pdf/10.1098/rspb.2021.0853) for full details
- * [unique_locations.csv] Table with unique sensor locations used in analysis (used for creating Fig. 1 maps)
+ * [unique_locations.csv](./Data/unique_locations.csv) Table with unique sensor locations used in analysis (used for creating Fig. 1 maps)
 
 ### Scripts
  * [101_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Script to load birdnet output from [Eclipse Soundscapes](https://eclipsesoundscapes.org) recordings. [BirdNET](https://birdnet.cornell.edu/) was ran locally and output files were stored in [Data/Birdnet](./Data/Birdnet). Once files are loaded, this script alculates morning onset and evening cessation from raw BirdWeather data downloads. This script writes[Birdnet_cleaned_v03.csv]('./Data/birdnet_cleaned_v03.csv), which is used in subsequent data prep scripts.
