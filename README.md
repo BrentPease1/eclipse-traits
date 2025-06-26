@@ -33,8 +33,8 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
 * [201_analysis_birdnet_logistic_regression.R](./Scripts/201_analysis_birdnet_logistic_regression.R). This script is the primary analyatical script in the repository. The script uses data prep output, along with some additional tidying, to build regression models of how vocalization probabilities shift during the eclipse. Traits and context factors such as diel niche, eye size, light pollution, habitat density, migration patterns, and nest type are evaluated. Output is stored and displayed in figure 2.
 * [202_analysis2_vocalization_progression.R](./Scripts/202_analysis2_vocalization_progression.R). This script analyzes the progression or change in vocalization activity during the eclipse. Output is stored and displayed in Figure 3. 
 * [301_figures_figure_01.R](./Scripts/301_figures_figure_01.R). Creates and saves Figure 1.
-* [302_figures_figure_02.R](./Scripts/301_figures_figure_02.R). Creates and saves Figure 2.
-* [303_figures_figure_03.R](./Scripts/301_figures_figure_03.R). Creates and saves Figure 3.
-* [304_figures_figure_04.R](./Scripts/301_figures_figure_04.R). Creates and saves Figure 4.
+* [302_figures_figure_02.R](./Scripts/302_figures_figure_02.R). Creates and saves Figure 2.
+* [303_figures_figure_03.R](./Scripts/303_figures_figure_03.R). Creates and saves Figure 3.
+* [304_figures_figure_04_coverage_analysis.R](./Scripts/304_figures_figure_04_coverage_analysis.R). Creates and saves Figure 4.
 * [999_misc__birdweather_oct23_extract_contact_times.R](./Scripts/999_misc__birdweather_oct23_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2023 annular eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
 * [999_misc_birdweather_apr24_extract_contact_times.R](./Scripts/999_misc_birdweather_apr24_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2024 total eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
