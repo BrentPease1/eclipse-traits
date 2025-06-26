@@ -48,8 +48,23 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
    | Longitude | Longitude (EPSG 4326) of sensor |
    | coverage | The maximum coverage (percent obscuration of sun's face) that a location experienced during eclipse |
    | FirstContactDate | Date of first contact during eclipse |
-   | FirstContactTimeUTC | Time of first contact during eclipse. See [this link](https://en.wikipedia.org/wiki/Solar_eclipse#:~:text=The%20visual%20phases%20observed%20during,the%20entire%20disk%20is%20covered.) for an explanation of eclipse contacts. |
-
+   | FirstContactTimeUTC | Time of first contact (UTC time) during eclipse. See [this link](https://en.wikipedia.org/wiki/Solar_eclipse#:~:text=The%20visual%20phases%20observed%20during,the%20entire%20disk%20is%20covered.) for an explanation of eclipse contacts. |
+   | SecondContactTimeUTC | Time of second contact (UTC time) during eclipse |
+   | ThirdContactTimeUTC | Time of third contact (UTC time) during eclipse |
+   | FourthContactTimeUTC | Time of fourth contact (UTC) during eclipse |
+   | MaxEclipseTimeUTC | Time (UTC) of eclipse maximum |
+   | eclipse_event | Indicates whether row pertains to total eclipse ("total") or annular eclipse ("annular") |
+   | dist_to_center | Distance (m) of sensor location from centerline of eclipse path |
+   | path_status | Indicates whether sensor was inside eclipse path or not |
+   | dist_km | Distance (km) of sensor location from centerline of eclipse path |
+   | activity | Indicates whether a species is coded as nocturnal or diurnal |
+   | data_source | Indicates whether data comes from Birdweather ("BW") or Eclipse Soundscapes ("ES") |
+   | Station | Station identifier for BirdWeather |
+   | year | Year |
+   | month | Month |
+   | timestamp_group | Index grouping based on time |
+   | avg_rad | Radiance from the [VIIRS Nighttime Light](https://eogdata.mines.edu/products/vnl/) satellite data product; used as a measure of light pollution at a location |
+   
  * [elton.txt](./Data/elton.txt) Elton Traits database; using this just to grab family names. See [Wilman et al. 2014](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1917.1) for details.
  * [pnoct_v01.csv](./Data/pnoct_v01.csv) Table with proportion of detections during nighttime (before sunrise or after sunset) under typical conditions. Derived from BirdWeather and Eclipse Soundscapes sensors on non-eclipse days.
    | Column name | Description |
