@@ -16,6 +16,15 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
  
 ## Repository Directory
 
+### Data
+ * [2023eclipse_shapefiles](./Data/2023eclipse_shapefiles) Shapefile of 2023 annular eclipse path
+ * [2024eclipse_shapefiles](./Data/2024eclipse_shapefiles) Shapefile of 2024 total eclipse path
+ * [metadata](./Data/metadata) Folder containing ***
+   * [2023_annular_locations_times.csv](./Data/metadata/2023_annular_locations_times.csv) *** what is this brent
+   * [es2024_locations_times.csv](./Data/metadata/es2024_locations_times.csv) *** what is this brent
+   * [es2024_locations_timesv02.csv](./Data/metadata/es2024_locations_timesv02.csv) *** what is this brent
+ * b
+
 ### Scripts
  * [101_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Script to load birdnet output from [Eclipse Soundscapes](https://eclipsesoundscapes.org) recordings. [BirdNET](https://birdnet.cornell.edu/) was ran locally and output files were stored in [Data/Birdnet](./Data/Birdnet). Once files are loaded, this script alculates morning onset and evening cessation from raw BirdWeather data downloads. This script writes[Birdnet_cleaned_v03.csv]('./Data/birdnet_cleaned_v03.csv), which is used in subsequent data prep scripts.
  * [101b_data-prep_load_birdnet.R](./Scripts/101_data-prep_load_birdnet.R). Helper script that is sourced within the primary load_birdnet script. This script loads Birdnet output files that have slightly different column names. Output from this script is binded with the data.frame of the primary load_birdnet script.
