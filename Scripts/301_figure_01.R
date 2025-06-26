@@ -107,10 +107,9 @@ lab_to <- tribble(
                                      margin = margin(l = -2, unit = "pt")),
           plot.margin = margin(0,0,0,0)) )
 
-setwd(here::here("Results/Figures"))
 ggsave(
   plot_annular,
-  filename = "figure_01b.png", 
+  filename = here::here("Figures/figure_01b.png"), 
   width = 4, 
   height = 2.5, 
   units = "in", 
@@ -118,7 +117,7 @@ ggsave(
 
 ggsave(
   plot_total,
-  filename = "figure_01c.png", 
+  filename = here::here("Figures/figure_01c.png"), 
   width = 4, 
   height = 2.5, 
   units = "in", 
