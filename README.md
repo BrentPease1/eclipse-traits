@@ -19,10 +19,24 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
 ### Data
  * [2023eclipse_shapefiles](./Data/2023eclipse_shapefiles) Folder with shapefile of 2023 annular eclipse path
  * [2024eclipse_shapefiles](./Data/2024eclipse_shapefiles) Folder with shapefile of 2024 total eclipse path
- * [metadata](./Data/metadata) Folder containing ***
-   * [2023_annular_locations_times.csv](./Data/metadata/2023_annular_locations_times.csv) *** what is this brent
-   * [es2024_locations_times.csv](./Data/metadata/es2024_locations_times.csv) *** what is this brent
-   * [es2024_locations_timesv02.csv](./Data/metadata/es2024_locations_timesv02.csv) *** what is this brent
+ * [metadata](./Data/metadata) Folder containing metadata provided by Eclipse Soundscapes Team. This all files within this folder generally contain the following information:
+   | Column name | Description |
+   |-------------|-------------|
+   | ESIDNumber | Sensor identifier specific to Eclipse Soundscapes|
+   | Latitude | Latitude (EPSG 4326) of sensor |
+   | Longitude | Longitude (EPSG 4326) of sensor |
+   | coverage | The maximum coverage (percent obscuration of sun's face) that a location experienced during eclipse |
+   | FirstContactDate | Date of first contact during eclipse |
+   | FirstContactTimeUTC | Time of first contact (UTC time) during eclipse. See [this link](https://en.wikipedia.org/wiki/Solar_eclipse#:~:text=The%20visual%20phases%20observed%20during,the%20entire%20disk%20is%20covered.) for an explanation of eclipse contacts. |
+   | SecondContactTimeUTC | Time of second contact (UTC time) during eclipse |
+   | ThirdContactTimeUTC | Time of third contact (UTC time) during eclipse |
+   | FourthContactTimeUTC | Time of fourth contact (UTC) during eclipse |
+   | MaxEclipseTimeUTC | Time (UTC) of eclipse maximum |
+
+These metadata were merged with bird detection information and used in subsequent analysis. 
+   * [2023_annular_locations_times.csv](./Data/metadata/2023_annular_locations_times.csv) 2023 Annular Eclipse metadata provided by Eclipse Soundscapes
+   * [es2024_locations_times.csv](./Data/metadata/es2024_locations_times.csv) 2024 Total Eclipse metadata provided by Eclipse Soundscapes
+   * [es2024_locations_timesv02.csv](./Data/metadata/es2024_locations_timesv02.csv) 2024 Total Eclipse metadata provided by Eclipse Soundscapes. A second round of data arrived from Eclipse Soundscapes, and the metadata for these deployments were stored in this csv. 
  * [avonet.csv](./Data/avonet.csv) AVONET database; the two relevant columns we use are `Habitat.Density` and `Migration`. See [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for full details
  * [birdweather_elton_botw_name_key.csv](./Data/birdweather_elton_botw_name_key.csv) Crosswalk table for resolving name differences between datasets
  * [cavity.csv](./Data/cavity.csv) Table with nest type. Derived from reviewing species pages on [Birds of the World](https://birdsoftheworld.org/bow/home). Column meanings provided below.
@@ -35,7 +49,7 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
    | Column name | Description |
    |-------------|-------------|
    | lat_lon_index | Index for grouping of latitude and longitude. Not used in downstream analysis  |
-   | ESIDNumber | Sensor identifier |
+   | ESIDNumber | Sensor identifier specific to Eclipse Soundscapes|
    | common_name | Species common name (BirdNET output) |
    | scientific_name | Species scientific name (BirdNET output) |
    | start_time | Start time of audio clip |
@@ -55,7 +69,7 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
    | MaxEclipseTimeUTC | Time (UTC) of eclipse maximum |
    | eclipse_event | Indicates whether row pertains to total eclipse ("total") or annular eclipse ("annular") |
    | dist_to_center | Distance (m) of sensor location from centerline of eclipse path |
-   | path_status | Indicates whether sensor was inside eclipse path or not |
+   | path_status | Indicates whether sensor was within eclipse path or not |
    | dist_km | Distance (km) of sensor location from centerline of eclipse path |
    | activity | Indicates whether a species is coded as nocturnal or diurnal |
    | data_source | Indicates whether data comes from Birdweather ("BW") or Eclipse Soundscapes ("ES") |
@@ -78,7 +92,7 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
 Contains figure files, including PowerPoint files using to collate and annotate figure panels
 
 ### Helpers/Eclipse-Data-Tool-main
-*** brent can you put a nice description here? idk what this is
+The [Eclipse Data Tool](https://github.com/ARISA-Lab-LLC), developed by [ARISA Lab](https://arisalab.org/), is a set of JavaScript files and an HTML page that allows the user to get data for a particular eclipse at different locations. We downloaded the GitHub repository for the software to extract eclipse contact times for all BirdWeather Stations using two contact time scripts: [Annular Contact Times](./Scripts/999_misc__birdweather_oct23_extract_contact_times.R) and [Total Contact Times](./Scripts/999_misc_birdweather_apr24_extract_contact_times.R). We stored the Eclipse Data Tool in our repository for reproducibility of our analysis, but recommend users download directly from [GitHub](https://github.com/ARISA-Lab-LLC). 
 
 ### Results
  * [annular_eclipse_results.RData](./Results/annular_eclipse_results.RData) Model objects from annular analysis, as well as formatted data used to fit models. Generated from [204_annular_analysis.R](./Scripts/204_annular_analysis.R).
