@@ -19,7 +19,7 @@ Solar eclipses represent natural experiments to evaluate the effect of light flu
 ### Data
  * [2023eclipse_shapefiles](./Data/2023eclipse_shapefiles) Folder with shapefile of 2023 annular eclipse path
  * [2024eclipse_shapefiles](./Data/2024eclipse_shapefiles) Folder with shapefile of 2024 total eclipse path
- * [metadata](./Data/metadata) Folder containing metadata provided by Eclipse Soundscapes Team. This all files within this folder generally contain the following information:
+ * [metadata](./Data/metadata) Folder containing metadata provided by Eclipse Soundscapes Team. All files within this folder generally contain the following information:
    | Column name | Description |
    |-------------|-------------|
    | ESIDNumber | Sensor identifier specific to Eclipse Soundscapes|
