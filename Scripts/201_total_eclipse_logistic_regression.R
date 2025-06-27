@@ -7,7 +7,7 @@ library(sf)
 library(rnaturalearth)
 library(data.table)
 
-conus84 <- rnaturalearth::ne_states(iso_a2 = "US") |> 
+conus84 <- rnaturalearth::ne_states(iso_a2 = "US", returnclass = "sf") |> 
   dplyr::summarise(geometry = sf::st_union(geometry))
 
 birdnet <- readr::read_csv( here::here("Data/merged_es_bw_apr2025_viirs.csv"))
