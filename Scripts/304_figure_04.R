@@ -110,9 +110,11 @@ p_peak <- annular_nd |>
         add_column(type = "total")) |> 
     ggplot(aes(x = cov, y = diff, color = type)) +
     geom_hline(yintercept = 0, color = "black", linewidth = 0.25) +
+    scale_x_continuous(limits = c(10, 100)) +
     
     # geom_line(linewidth = 1) +
-    geom_point(size = 0.75) +
+    geom_line(linewidth = 1.25) +
+    # geom_point(size = 0.75) +
     # geom_line() +
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Johnson[[1]][c(2,4)]) +
@@ -121,7 +123,7 @@ p_peak <- annular_nd |>
          color = "eclipse type",
          x = "obscuration (%)",
          y = "difference in p(vocalization)",
-         title = "maximum relative to 32 minutes prior")  +
+         title = "maximum relative to 32 min prior")  +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
