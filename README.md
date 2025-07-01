@@ -113,6 +113,7 @@ The [Eclipse Data Tool](https://github.com/ARISA-Lab-LLC), developed by [ARISA L
 * [302_figure_02.R](./Scripts/302_figure_02.R). Creates and saves Figure 2.
 * [303_figure_03.R](./Scripts/303_figure_03.R). Creates and saves Figure 3.
 * [304_figure_04.R](./Scripts/304_figure_04.R). Creates and saves Figure 4.
-* [305_figure_s01.R](./Scripts/305_figure_s01.R). Creates and saves Figure S01. 
+* [305_figure_s01.R](./Scripts/305_figure_s01.R). Creates and saves Figure S01.
+* [306_table_s01.R](./Scripts/306_table_s01.R). Creates a species list for the supplement. 
 * [999_misc__birdweather_oct23_extract_contact_times.R](./Scripts/999_misc__birdweather_oct23_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2023 annular eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
 * [999_misc_birdweather_apr24_extract_contact_times.R](./Scripts/999_misc_birdweather_apr24_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2024 total eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
