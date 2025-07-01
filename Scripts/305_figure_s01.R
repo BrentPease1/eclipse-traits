@@ -43,7 +43,7 @@ load( here::here("Results/annular_eclipse_results.RData"))
     geom_line(linewidth = 0.75,
               alpha = 0.5,
               color = MetBrewer::MetPalettes$Isfahan1[[1]][c(6)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "proportion of community vocalizing",
          title = "(b)") +
     theme_classic() +
@@ -103,7 +103,7 @@ sp <- nd_sp |>
     geom_line(data = com, aes(x = bin_rel, y = fit), linewidth = 1.75,
               color = MetBrewer::MetPalettes$Ingres[[1]][7]) +
     theme_classic() +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "p(vocalization) during 4-minute bin",
          title = "(b)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
