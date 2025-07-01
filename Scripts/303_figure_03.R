@@ -17,7 +17,7 @@ load( here::here("Results/total_eclipse_vocalization_progression.RData"))
   geom_line(linewidth = 0.3,
             alpha = 0.5,
             color = MetBrewer::MetPalettes$Isfahan1[[1]][c(6)]) +
-  labs(x = "time from peak (min)",
+  labs(x = "time from eclipse maximum (min)",
        y = "proportion of community vocalizing",
        title = "(a)") +
   theme_classic() +
@@ -25,7 +25,7 @@ load( here::here("Results/total_eclipse_vocalization_progression.RData"))
         axis.ticks = element_line(color = "black", linewidth = 0.2), 
         axis.text = element_text(color = "black", size = 8), 
         plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
-        axis.title = element_text(color = "black", size = 9),
+        axis.title = element_text(color = "black", size = 8),
         panel.background = element_blank(),
         plot.background = element_blank()) ) 
 
@@ -113,14 +113,14 @@ sp <- nd_sp |>
     geom_line(data = com, aes(x = bin_rel, y = fit), linewidth = 1.5,
               color = MetBrewer::MetPalettes$Ingres[[1]][7]) +
     theme_classic() +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(b)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           panel.background = element_blank(),
           plot.background = element_blank() ) ) 
 
@@ -219,13 +219,13 @@ all_p <- dnb_nd |>
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Kandinsky[[1]][c(2,4)]) +
     scale_fill_manual(values = MetBrewer::MetPalettes$Kandinsky[[1]][c(2,4)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(d)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
@@ -244,13 +244,13 @@ cp <- colorRampPalette(MetBrewer::MetPalettes$Kandinsky[[1]][c(2, 4)])
     theme_classic() +
     scale_color_manual(values = cp(3)) +
     scale_fill_manual(values = cp(3)) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(c)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
@@ -268,13 +268,13 @@ cp <- colorRampPalette(MetBrewer::MetPalettes$Kandinsky[[1]][c(2, 4)])
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Hokusai1[[1]][c(2,7)]) +
     scale_fill_manual(values = MetBrewer::MetPalettes$Hokusai1[[1]][c(2,7)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(e)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
@@ -293,13 +293,13 @@ hd_cp <- colorRampPalette(MetBrewer::MetPalettes$Hokusai2[[1]][c(2, 5)])
     theme_classic() +
     scale_color_manual(values = hd_cp(2)) +
     scale_fill_manual(values = hd_cp(2)) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(f)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
@@ -318,13 +318,13 @@ mi_cp <- colorRampPalette( MetBrewer::MetPalettes$Cassatt2[[1]][c(3,8)])
     theme_classic() +
     scale_color_manual(values = mi_cp(2)) +
     scale_fill_manual(values = mi_cp(2)) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(g)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           strip.background = element_blank(), 
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
           strip.text = element_text(color = "black", size = 9, face = "bold"),
@@ -341,14 +341,14 @@ mi_cp <- colorRampPalette( MetBrewer::MetPalettes$Cassatt2[[1]][c(3,8)])
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Ingres[[1]][c(4,6)]) +
     scale_fill_manual(values = MetBrewer::MetPalettes$Ingres[[1]][c(4,6)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(h)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
           panel.background = element_blank(),
@@ -364,13 +364,13 @@ mi_cp <- colorRampPalette( MetBrewer::MetPalettes$Cassatt2[[1]][c(3,8)])
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Manet[[1]][c(1,3)]) +
     scale_fill_manual(values = MetBrewer::MetPalettes$Manet[[1]][c(1,3)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(i)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
@@ -387,13 +387,13 @@ mi_cp <- colorRampPalette( MetBrewer::MetPalettes$Cassatt2[[1]][c(3,8)])
     theme_classic() +
     scale_color_manual(values = MetBrewer::MetPalettes$Navajo[[1]][c(2,4)]) +
     scale_fill_manual(values = MetBrewer::MetPalettes$Navajo[[1]][c(2,4)]) +
-    labs(x = "time from peak (min)",
+    labs(x = "time from eclipse maximum (min)",
          y = "probability of vocalization during 4-minute window",
          title = "(j)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
-          axis.title = element_text(color = "black", size = 9),
+          axis.title = element_text(color = "black", size = 8),
           plot.title = element_text(color = "black", size = 9, vjust = -2.5, hjust = -0.15),
           strip.background = element_blank(), 
           strip.text = element_text(color = "black", size = 9, face = "bold"),
