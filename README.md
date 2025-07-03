@@ -3,7 +3,7 @@
 ### [Neil A. Gilbert](https://www.gilbertecology.com/)†, [Brent S. Pease](https://peaselab.com/)†, [MaryKay Severino](https://eclipsesoundscapes.org), and [Henry 'Trae' Winter III](https://eclipsesoundscapes.org)
 
 † _Shared first authorship_
-### Data/code DOI:
+### Data/code DOI:[![DOI](https://zenodo.org/badge/1003842687.svg)](https://doi.org/10.5281/zenodo.15790878)
 
 #### Please contact Neil Gilbert (neil.gilbert@okstate.edu) or Brent Pease (bpease1@siu.edu) for questions about the code or data.
 
