@@ -45,7 +45,7 @@ load( here::here("Results/annular_eclipse_results.RData"))
               color = MetBrewer::MetPalettes$Isfahan1[[1]][c(6)]) +
     labs(x = "time from eclipse maximum (min)",
          y = "proportion of community vocalizing",
-         title = "(b)") +
+         title = "(c)") +
     theme_classic() +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
@@ -105,7 +105,7 @@ sp <- nd_sp |>
     theme_classic() +
     labs(x = "time from eclipse maximum (min)",
          y = "p(vocalization) during 4-minute bin",
-         title = "(b)") +
+         title = "(d)") +
     theme(axis.line = element_line(color = "black", linewidth = 0.2), 
           axis.ticks = element_line(color = "black", linewidth = 0.2), 
           axis.text = element_text(color = "black", size = 8), 
