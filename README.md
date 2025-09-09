@@ -3,7 +3,7 @@
 ### [Neil A. Gilbert](https://www.gilbertecology.com/)†, [Brent S. Pease](https://peaselab.com/)†, [MaryKay Severino](https://eclipsesoundscapes.org), and [Henry 'Trae' Winter III](https://eclipsesoundscapes.org)
 
 † _Shared first authorship_
-### Data/code DOI:[![DOI](https://zenodo.org/badge/1003842687.svg)](https://doi.org/10.5281/zenodo.15790878)
+### Data/code DOI:
 
 #### Please contact Neil Gilbert (neil.gilbert@okstate.edu) or Brent Pease (bpease1@siu.edu) for questions about the code or data.
 
@@ -117,3 +117,4 @@ The [Eclipse Data Tool](https://github.com/ARISA-Lab-LLC), developed by [ARISA L
 * [306_table_s01.R](./Scripts/306_table_s01.R). Creates a species list for the supplement. 
 * [999_misc__birdweather_oct23_extract_contact_times.R](./Scripts/999_misc__birdweather_oct23_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2023 annular eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
 * [999_misc_birdweather_apr24_extract_contact_times.R](./Scripts/999_misc_birdweather_apr24_extract_contact_times.R). Script used to run isolate and run birdweather detections during the 2024 total eclipse through an eclipse contact time tool, based on lat/lon of deployment. Contact Time tool is available in [the Helpers folder](./Helpers/Eclipse-Data-Tool-main).
+
